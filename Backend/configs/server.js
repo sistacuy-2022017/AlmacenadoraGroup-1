@@ -5,6 +5,7 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 import { dbConnectionAlmacenadora } from './mongo.js'
+import routesWarehousing from '../src/warehousing/warehousing.routes.js';
 
 
 class Server{
@@ -12,8 +13,10 @@ class Server{
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
+        this.WarehousingRoutes = '/api/v1/warehousing';
         this.middlewares();
         this.dbConexionAlmacenadora();
+        this.routes();
     }
 
     middlewares(){
@@ -24,6 +27,9 @@ class Server{
         this.app.use(morgan('dev'));
     }
 
+    routes(){
+        this.app.use(this.WarehousingRoutes, routesWarehousing);
+    }
     async dbConexionAlmacenadora(){
         await dbConnectionAlmacenadora();
     }

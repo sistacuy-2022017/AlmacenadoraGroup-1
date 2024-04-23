@@ -1,11 +1,11 @@
-import WareHousing from './warehousing.model';
+import WareHousing from './warehousing.model.js';
 import { request, response } from 'express';
 
 export const createTask = async (req, res) => {
-    const { taskName, descriptionTask, dateTask, dateTaskEnd, preorityTask, statusTask, userTask } = req.body;
+    const { taskName, descriptionTask, dateTask, dateTaskEnd, priorityTask, statusTask, userTask } = req.body;
 
     try {
-        const task = new WareHousing({ taskName, descriptionTask, dateTask, dateTaskEnd, preorityTask, statusTask, userTask });
+        const task = new WareHousing({ taskName, descriptionTask, dateTask, dateTaskEnd, priorityTask, statusTask, userTask });
 
         await task.save();
 
