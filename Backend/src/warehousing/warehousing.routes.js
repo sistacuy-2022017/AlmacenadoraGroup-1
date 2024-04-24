@@ -1,12 +1,11 @@
-import {Router} from 'express';
-import {check} from 'express-validator';
-import {createTask,} from './warehousing.controller.js';
+import { Router } from "express";
+import { check } from "express-validator";
+import { createTask, updateTask } from "./warehousing.controller.js";
 const routesWarehousing = Router();
 
-routesWarehousing.post(
-    '/createTask',
-     [
-        
-     ], createTask);
+routesWarehousing.post("/createTask", [], createTask);
 
-     export default routesWarehousing;
+routesWarehousing.put("/updateTask/:id", [], updateTask);
+
+
+export default routesWarehousing;

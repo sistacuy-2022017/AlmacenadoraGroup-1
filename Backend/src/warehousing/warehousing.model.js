@@ -1,4 +1,13 @@
-    import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
+
+const typePriority = {
+    values: ['low', 'medium', 'high'],
+};
+
+const progressTaskXDD = {
+    values: ['pending', 'in progress', 'completed'],
+};
+
 
 const warehousingSchema = new Schema({
     taskName: {
@@ -21,13 +30,20 @@ const warehousingSchema = new Schema({
         type: String,
         required: true
     },
+    progressTask: {
+        type: String,
+        enum: progressTaskXDD,
+        required: true
+    },
     priorityTask: {
         type: String,
+        enum: typePriority,
         required: true
     },
     statusTask: {
         type: String,
-        required: true
+        required: true,
+        default: true
     },
 });
 
