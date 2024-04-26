@@ -63,3 +63,20 @@ export const updateTask = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
+export const deleteTask = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const task = await WareHousing.findById(id);
+
+    if (!task) {
+      return res.status(404).json({ msg: "Tarea no encontrada" });
+    }
+
+    res.status(200).json({ msg: "Tarea eliminada exitosamente" });
+  } catch (error) {
+    console.error("Error al eliminar la tarea: ", error);
+    res.status(400).json({ error: error.message });
+  }
+};

@@ -1,13 +1,15 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { validateProgressTask } from "../middlewares/validation-Progress.js";
-import { typePriority } from '../middlewares/validation-Priority.js'
-import { createTask, updateTask } from "./warehousing.controller.js";
+import { createTask, updateTask, deleteTask } from "./warehousing.controller.js";
 const routesWarehousing = Router();
 
-routesWarehousing.post("/createTask", [], validateProgressTask, typePriority, createTask);
+routesWarehousing.post("/createTask", [], createTask);
 
 routesWarehousing.put("/updateTask/:id", [], updateTask);
+
+
+routesWarehousing.delete("/deleteTask/:id", [], deleteTask);
+
 
 
 export default routesWarehousing;
