@@ -1,0 +1,59 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Almacenadora",
+    "dateExported": "2024-04-25T23:22:56.066Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "1fe73b3f-0171-42fc-a9bf-cac62ebfe52e",
+            "colId": "e6879738-d2f2-4bde-a8a6-48ce08be7e4d",
+            "containerId": "",
+            "name": "addTask",
+            "url": "http://localhost:3001/apiAlmacenadora/v1/warehousing/createTask",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-04-25T22:09:17.840Z",
+            "modified": "2024-04-25T23:03:49.145Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"taskName\": \"prueba2\",\n    \"descriptionTask\": \"yo q ce de las cosas\",\n    \"dateTask\": \"2024-04-23T10:00:00.000Z\",\n    \"dateTaskEnd\": \"2024-04-23T10:00:00.000Z\",\n    \"userTask\": \"pruebita2\",\n    \"progressTask\": \"pending\",\n    \"priorityTask\": \"medium\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "5af4414c-8ec1-49df-94ae-82af710b5840",
+            "colId": "e6879738-d2f2-4bde-a8a6-48ce08be7e4d",
+            "containerId": "",
+            "name": "taskUpdate",
+            "url": "",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-04-25T22:09:17.841Z",
+            "modified": "2024-04-25T22:09:17.841Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"taskName\": \"prueba120\"\r\n}"
+            }
+        },
+        {
+            "_id": "68d68c93-7a5f-4eb8-b524-b45b0b91ab66",
+            "colId": "e6879738-d2f2-4bde-a8a6-48ce08be7e4d",
+            "containerId": "",
+            "name": "deleteTask",
+            "url": "http://localhost:3001/apiAlmacenadora/v1/warehousing/deleteTask/662ae155c18377a32caf0bb7",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-04-25T23:04:23.159Z",
+            "modified": "2024-04-25T23:05:34.509Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
