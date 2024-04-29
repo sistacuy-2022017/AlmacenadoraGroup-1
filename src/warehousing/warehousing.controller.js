@@ -37,6 +37,17 @@ export const createTask = async (req, res) => {
   }
 };
 
+export const getTasks = async (req, res) => {
+  try {
+    const tasks = await WareHousing.find();
+    res.status(200).json(tasks);
+  } catch (error) {
+    console.error("ERROR: al obtener las tareas: ", error);
+    res.status(500).json({ error: "ERROR: interno del servidor" });
+  }
+};
+
+
 export const updateTask = async (req, res) => {
   const { id } = req.params;
   const {
