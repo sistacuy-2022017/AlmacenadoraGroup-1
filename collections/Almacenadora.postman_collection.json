@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "6e06ef25-7384-44b6-b56a-f80f3dc84e91",
+		"name": "Almacenadora",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34430314"
+	},
+	"item": [
+		{
+			"name": "addTask",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"taskName\": \"prueba1\",\r\n    \"descriptionTask\": \"yo q c\",\r\n    \"dateTask\": \"2024-04-23T10:00:00.000Z\",\r\n    \"dateTaskEnd\": \"2024-04-23T10:00:00.000Z\",\r\n    \"userTask\": \"pruebita1\",\r\n    \"progressTask\": \"pending\",\r\n    \"priorityTask\": \"medium\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3001/apiAlmacenadora/v1/warehousing/createTask"
+			},
+			"response": []
+		},
+		{
+			"name": "taskUpdate",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"taskName\": \"prueba120\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3001/apiAlmacenadora/v1/warehousing/updateTask/66284fb9c4550015d10d22cc"
+			},
+			"response": []
+		}
+	]
+}
