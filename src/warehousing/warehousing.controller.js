@@ -1,16 +1,15 @@
 import WareHousing from "./warehousing.model.js";
 import { request, response } from "express";
 
-export const createTask = async (req, res) => {
+export const createTaskk = async (req, res) => {
   const {
     taskName,
     descriptionTask,
     dateTask,
     dateTaskEnd,
-    priorityTask,
-    statusTask,
-    userTask,
     progressTask,
+    priorityTask,
+    userTask,
   } = req.body;
 
   try {
@@ -19,10 +18,9 @@ export const createTask = async (req, res) => {
       descriptionTask,
       dateTask,
       dateTaskEnd,
-      priorityTask,
-      statusTask,
-      userTask,
       progressTask,
+      priorityTask,
+      userTask,
     });
 
     await task.save();
@@ -39,14 +37,9 @@ export const createTask = async (req, res) => {
 
 export const updateTask = async (req, res) => {
   const { id } = req.params;
-  const {
-    _id,
-    statusTask,
-    ...resto
-  } = req.body;
+  const { _id, statusTask, ...resto } = req.body;
 
   try {
-     
     const task = await WareHousing.findById(id);
 
     if (!task) {
@@ -55,7 +48,6 @@ export const updateTask = async (req, res) => {
 
     await WareHousing.findByIdAndUpdate(id, resto);
     const task11 = await WareHousing.findOne({ _id: id });
-
 
     res.status(200).json({ msg: "Tarea actualizada exitosamente", task11 });
   } catch (error) {
